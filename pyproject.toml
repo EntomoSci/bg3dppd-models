@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bg3dppd-models"
+version = "1.0.0"
+description = "NLP models for board game 3D printed product descriptions."
+readme = "README.md"
+authors = [{name = "smv7", github = "https://github.com/smv7"}]
+license = {file = "LICENSE"}
+dependencies = [
+    "spacy >= 3.3.1",]
+requires-python = ">=3.10.6"
+
+[project.urls]
+Homepage = "https://github.com/smv7/Doccano2SpacyFormatConverter"
