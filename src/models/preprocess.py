@@ -37,7 +37,11 @@ def main() -> None:
 
         # Serializing the custom annotated data to be exported to a .spacy file.
         db = DocBin(attrs=['ENT_IOB', 'ENT_TYPE'])
-        for sample in srsly.read_jsonl(Path(__file__).parent.joinpath(args.file2serialize)):
+        for i, sample in enumerate(srsly.read_jsonl(Path(__file__).parent.joinpath(args.file2serialize)), 1):
+            # print(i)  # FOR DEBUG.
+            if len(sample['spans']) == 0:
+                continue
+
             # Reconstructing whitespace information from the tokens.
             tokens = [token['text'] for token in sample['tokens']]
             words, spaces = get_words_and_spaces(tokens, sample['text'])
