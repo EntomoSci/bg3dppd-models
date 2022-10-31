@@ -1,7 +1,7 @@
 """
 Creation: 2022/10/31
 Author: https://github.com/smv7
-Description: Script to preprocess train data for bg3dppd models."""
+Description: Script to build .spacy files to train bg3dppd models."""
 
 
 import argparse
@@ -17,7 +17,8 @@ from spacy.tokens import Doc, DocBin
 
 def main() -> None:
     # Configuring the CLI.
-    parser = argparse.ArgumentParser(description="Build .spacy train data from format's compatible annotated data.")
+    parser = argparse.ArgumentParser(description="Build .spacy train data from spaCy's"
+                                                 " format compatible annotated data.")
     parser.add_argument('file2serialize', help='Annotated data to be serialized to .spacy file.')
     parser.add_argument('destination', default=Path(__file__).parent.joinpath('train.spacy'),
                         help='.spacy file destination.')
